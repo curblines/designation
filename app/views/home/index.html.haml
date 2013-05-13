@@ -2,4 +2,6 @@
 %h3= link_to("Prior", @prior_landmark_slug)
 %h3= link_to("Next Up", @next_landmark_slug)
 %h5= @test_land_path
-%h5= @test_location
+%ul
+  - @test_location.data.each_pair do |key, value|
+    %li #{key} : #{value}
