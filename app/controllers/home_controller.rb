@@ -2,13 +2,8 @@ class HomeController < ActionController::Base
   protect_from_forgery
 
   def index
-    pp 'location****************'
-    pp request.location
-    pp 'location****************'
-
-    pp 'landpath****************'
-    pp @test_land_path = session[:landmark_path]
-    pp 'landpath****************'
+    @test_location = request.location
+    @test_land_path = session[:landmark_path]
 
 
     # Determine our location
@@ -25,9 +20,6 @@ class HomeController < ActionController::Base
 
       # Grab the landmarks and sort by distance to where we are
       landmarks = Landmark.near([lat, lng], 5).limit(20) # https://github.com/alexreisner/geocoder
-      pp '****************'
-      pp landmarks
-      pp '****************'
       session[:landmark_path] = landmarks.collect{|lm| lm.slug} # create a path
     end
   
