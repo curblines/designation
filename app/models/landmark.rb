@@ -1,7 +1,7 @@
 class Landmark < ActiveRecord::Base
   after_create :generate_slug # make sure each has a unique code
   attr_accessible :description, :designation, :founders, :inception, :lat, :lng, 
-                  :lpc_type, :name, :tags, :exhibit_ids
+                  :lpc_type, :name, :tags, :exhibit_ids, :slug
 
   # Schema
   ## :lpc_type is a *text* representing the type of landmark designation
