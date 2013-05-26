@@ -1,7 +1,7 @@
 class Landmark < ActiveRecord::Base
   after_create :generate_slug # make sure each has a unique code
   attr_accessible :description, :designation, :founders, :inception, :lat, :lng, 
-                  :lpc_type, :name, :tags, :exhibit_ids, :slug
+                  :lpc_type, :name, :tags, :slug
 
   # Schema
   ## :lpc_type is a *text* representing the type of landmark designation
@@ -20,6 +20,9 @@ class Landmark < ActiveRecord::Base
   # Functions
   def generate_slug
     self.slug = self.name.to_slug
+  end
+  def cover_photo
+    self.exhibits.where{medium.eq "cover_photo"}.first.uri + ".jpg"
   end
 
   # Geocoding

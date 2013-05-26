@@ -4,6 +4,7 @@ class Exhibit < ActiveRecord::Base
   # Schema
   ## 
   # :medium is a *text* representing the type of medium
+  # cover_photo
   # photo
   # report
 

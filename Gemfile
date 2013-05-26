@@ -4,6 +4,8 @@ gem 'rails', '3.2.13.rc1'
 gem 'pg'
 gem 'thin', '1.4.1'
 gem 'haml'
+gem 'cloudinary'
+gem 'squeel'
 # gem 'rails_admin', '0.4.6' # admin panel
 
 # Geocoding

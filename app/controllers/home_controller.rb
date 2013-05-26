@@ -1,4 +1,4 @@
-class HomeController < ActionController::Base
+class HomeController < ApplicationController
   protect_from_forgery
 
   def index
@@ -27,6 +27,8 @@ class HomeController < ActionController::Base
     num_landmarks = session[:landmark_path].length # determine how many landmarks we're dealing with
     session[:current_landmark_slug] = params[:specific_landmark_slug] || session[:landmark_path].first
     @cur_landmark = Landmark.find_by_slug(session[:current_landmark_slug]) # lookup the current landmark
+
+    @landmarks = Landmark.all
 
     # Prep the next and prior landmarks
     index_on_landmark_path = session[:landmark_path].index(session[:current_landmark_slug])
