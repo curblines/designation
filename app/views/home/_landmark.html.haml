@@ -1,4 +1,6 @@
 .pt-page{:class => "pt-page-#{(index).to_s}"}
   %h1= landmark.name
-  %h3= landmark.description
-  =cl_image_tag(landmark.cover_photo, :alt => "#{landmark.name}")
+  .cl-cover-photo
+    .cl-opacity-guard
+      %h3= landmark.description
+    = cl_image_tag(landmark.cover_photo, :crop=>"fill", :height=>500, :width=>1400, :alt => "#{landmark.name}")

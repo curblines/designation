@@ -44,7 +44,7 @@ var PageTransitions = (function() {
     // Handle paging
     if(direction === 'next') {
       if(++curPageIndex === pagesCount) curPageIndex = 0;
-    } else if(direction === 'prior') {
+    } else if(direction === 'prev') {
       if(--curPageIndex < 0) curPageIndex = pagesCount - 1;
     }
     var $upcomingPage = $pages.eq(curPageIndex);
@@ -57,7 +57,7 @@ var PageTransitions = (function() {
         outClass = 'pt-page-moveToLeft';
         inClass = 'pt-page-moveFromRight';
         break;
-      case 'prior':
+      case 'prev':
         outClass = 'pt-page-moveToRight';
         inClass = 'pt-page-moveFromLeft';
         break;
