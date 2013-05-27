@@ -1,6 +1,12 @@
 .pt-page{:class => "pt-page-#{(index).to_s}"}
   %h1= landmark.name
   .cl-cover-photo
+    =cl_image_tag(landmark.cover_photo, :alt => "#{landmark.name}")
     .cl-opacity-guard
+      %h2= landmark.summary
+  .cl-additional-info
+    .cl-description
       %h3= landmark.description
-    = cl_image_tag(landmark.cover_photo, :crop=>"fill", :height=>500, :width=>1400, :alt => "#{landmark.name}")
+    .cl-exhibit-grid
+      - landmark.exhibits.where{medium != "cover_photo"}.each do |exhibit|
+        = render 'exhibit', :exhibit=>exhibit, :landmark=>landmark

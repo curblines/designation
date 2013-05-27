@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130512032327) do
+ActiveRecord::Schema.define(:version => 20130526230629) do
 
   create_table "exhibits", :force => true do |t|
     t.text     "attribution"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20130512032327) do
     t.string   "slug"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.text     "summary"
   end
 
 end
