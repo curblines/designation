@@ -1,0 +1,7 @@
+.cl-exhibit
+  .cl-exhibit-image
+    =cl_image_tag(exhibit.uri + ".jpg", :alt => "#{exhibit.description}")
+  .cl-exhibit-info
+    %span.cl-exhibit-description= exhibit.description
+    %span.cl-exhibit-attribution= exhibit.attribution
+    %span.cl-exhibit-inception= exhibit.inception.strftime('%Y')
