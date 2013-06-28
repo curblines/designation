@@ -1,10 +1,14 @@
-.pt-triggers
-  %button.pt-touch-button.pt-triggers.right{"data-direction"=>"next"} Next
-  %button.pt-touch-button.pt-triggers.left{"data-direction"=>"prev"} Prev
+%i#navigation.icon-align-justify
+#landmark
+  .cl-trigger-container
+    %button.cl-touch-button.cl-trigger.right{"data-direction"=>"next"}
+      %i.icon-chevron-sign-right.icon-3x
+    %button.cl-touch-button.cl-trigger.left{"data-direction"=>"prev"}
+      %i.icon-chevron-sign-left.icon-3x
 
-#pt-main.pt-perspective
-  - @landmarks.each_with_index do |landmark, index|
-    = render 'landmark', :index=>index, :landmark=>landmark
+  #cl-main.cl-perspective
+    - @landmarks.each_with_index do |landmark, index|
+      = render 'landmark', :index=>index, :landmark=>landmark
 
-.pt-message
-  %p Your browser does not support CSS animations.
+  .cl-message
+    %p Your browser does not support CSS animations.

@@ -1,9 +1,9 @@
 var PageTransitions = (function() {
 
-  var $main = $('#pt-main'),
-      $pages = $main.children('div.pt-page'),
+  var $main = $('#cl-main'),
+      $pages = $main.children('div.cl-page'),
       curPageIndex = 0
-      $curPage = $pages.eq(curPageIndex).addClass('pt-page-current'); // set the initial page
+      $curPage = $pages.eq(curPageIndex).addClass('cl-page-current'); // set the initial page
       animcursor = 1,
       pagesCount = $pages.length,
       isAnimating = false,
@@ -30,16 +30,16 @@ var PageTransitions = (function() {
     //   }
     // } );
 
-    $('.pt-touch-button').click(function(e) { // handle next-previous
+    $('.cl-touch-button').click(function(e) { // handle next-previous
       var source = $(e.target);
-      direction = source.data('direction'); // grab the direction
+      direction = source.data('direction') || source.parent().data('direction'); // grab the direction
       nextPage(direction); // kick off the paging
     });
   }
 
   function nextPage(direction) {
     if(isAnimating) { return false; }
-    // isAnimating = true;
+    isAnimating = true;
     
     // Handle paging
     if(direction === 'next') {
@@ -48,18 +48,18 @@ var PageTransitions = (function() {
       if(--curPageIndex < 0) curPageIndex = pagesCount - 1;
     }
     var $upcomingPage = $pages.eq(curPageIndex);
-    $upcomingPage.addClass('pt-page-current');
+    $upcomingPage.addClass('cl-page-current');
 
     // Handle animations
     outClass = '', inClass = '';
     switch(direction) {
       case 'next':
-        outClass = 'pt-page-moveToLeft';
-        inClass = 'pt-page-moveFromRight';
+        outClass = 'cl-page-moveToLeft';
+        inClass = 'cl-page-moveFromRight';
         break;
       case 'prev':
-        outClass = 'pt-page-moveToRight';
-        inClass = 'pt-page-moveFromLeft';
+        outClass = 'cl-page-moveToRight';
+        inClass = 'cl-page-moveFromLeft';
         break;
     }
 
@@ -83,11 +83,12 @@ var PageTransitions = (function() {
     isAnimating = false;
     page.attr('class', page.data('originalClassList')); // reset the original classes
     if(pageType === 'outpage') {
-      page.removeClass('pt-page-current');
+      page.removeClass('cl-page-current');
     } else {
-      page.addClass('pt-page-current');
+      page.addClass('cl-page-current');
       $curPage = page; // reset the curPage
     }
+    $(window).scrollTop(0); // make sure we're at the top
   }
 
   init();

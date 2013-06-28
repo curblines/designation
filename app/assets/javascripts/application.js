@@ -14,4 +14,5 @@
 //= require modernizr
 //= require jquery.dlmenu
 //= require page_transitions
+//= require waypoints
 //= require_tree .

@@ -16,6 +16,8 @@
     %meta{"http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1"}
     %meta{"http-equiv" => 'content="width=device-width,initial-scale=1"'}
 
+    %link{:href=>"//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", :rel=>"stylesheet"}
+
     :plain
       <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -28,6 +30,7 @@
   / %meta{:content => (@page_url ||= default_url), :property => "og:url"}
   / %meta{:content => 'website', :property => "og:type"}
   / %meta{:content => full_title(@page_title ||= '', @location ||= 'NYC'), :property => "og:title"}
+
 
   %body
     #fb-root

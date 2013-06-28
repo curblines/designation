@@ -2,25 +2,25 @@
 
 /* move from / to  */
 
-.pt-page-moveToLeft {
+.cl-page-moveToLeft {
   -webkit-animation: moveToLeft .6s ease both;
   -moz-animation: moveToLeft .6s ease both;
   animation: moveToLeft .6s ease both;
 }
 
-.pt-page-moveFromLeft {
+.cl-page-moveFromLeft {
   -webkit-animation: moveFromLeft .6s ease both;
   -moz-animation: moveFromLeft .6s ease both;
   animation: moveFromLeft .6s ease both;
 }
 
-.pt-page-moveToRight {
+.cl-page-moveToRight {
   -webkit-animation: moveToRight .6s ease both;
   -moz-animation: moveToRight .6s ease both;
   animation: moveToRight .6s ease both;
 }
 
-.pt-page-moveFromRight {
+.cl-page-moveFromRight {
   -webkit-animation: moveFromRight .6s ease both;
   -moz-animation: moveFromRight .6s ease both;
   animation: moveFromRight .6s ease both;

@@ -23,3 +23,20 @@ a:hover {
   color: #fff;
 }
 
+/* Navigation */
+#navigation {
+  font-size: 60px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: rgba(0,0,0,.5);
+  z-index: 1;
+  cursor: pointer;
+  position: fixed;
+  text-shadow: 3px 2px 1px #CEE5ED;
+}
+
+/* Landmark */
+#landmark {
+  .cl-header h1 { width: 90%;}
+}
