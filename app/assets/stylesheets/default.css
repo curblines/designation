@@ -38,5 +38,7 @@ a:hover {
 
 /* Landmark */
 #landmark {
-  .cl-header h1 { width: 90%;}
+  .cl-header { width: 100%;
+    h1 { width: 90%; }
+  }
 }
