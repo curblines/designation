@@ -32,7 +32,5 @@ class HomeController < ApplicationController
 
     # Prep the next and prior landmarks
     index_on_landmark_path = session[:landmark_path].index(session[:current_landmark_slug])
-    @next_landmark_slug = session[:landmark_path][(index_on_landmark_path+1)%num_landmarks] # increment on the path
-    @prior_landmark_slug = session[:landmark_path][(index_on_landmark_path-1)%num_landmarks] # decrement on the path
   end
 end
